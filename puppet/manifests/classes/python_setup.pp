@@ -5,6 +5,9 @@ class python_setup {
             package { "python-pip":
                 ensure => installed
             }
+            package { "python-scipy":
+                ensure => installed
+            }
             package { "numpy":
                 ensure => installed,
                 provider => pip,
