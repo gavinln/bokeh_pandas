@@ -31,16 +31,31 @@ values = []
 for i in range(1, 20):
     values.append([y_ ** i for y_ in y])
 
-while True:
-    # now we update the y column in the datasource
-    # with each y-value list in the values list
-    for val in values:
-        ds.data["y"] = val
-        cursession().store_objects(ds)
-        time.sleep(0.1)
 
-    # and now we go back to the initial state just reversing the values list
-    for val in values[::-1]:
-        ds.data["y"] = val
-        cursession().store_objects(ds)
-        time.sleep(0.1)
+def update():
+    while True:
+        # now we update the y column in the datasource
+        # with each y-value list in the values list
+        for val in values:
+            ds.data["y"] = val
+            cursession().store_objects(ds)
+            time.sleep(0.5)
+
+        for val in values[::-1]:
+            ds.data["y"] = val
+            cursession().store_objects(ds)
+            time.sleep(0.5)
+
+
+#while True:
+#    ds.data['y'][0] = ds.data['y'][0] + 1
+#    renderer[0].glyph.line_color = 'red'
+#    cursession().store_objects(renderer[0], dirty_only=False)
+#    cursession().store_objects(ds)
+#    time.sleep(0.5)
+#
+#    ds.data['y'][0] = ds.data['y'][0] + 1
+#    renderer[0].glyph.line_color = 'blue'
+#    cursession().store_objects(renderer[0], dirty_only=False)
+#    cursession().store_objects(ds)
+#    time.sleep(0.5)
