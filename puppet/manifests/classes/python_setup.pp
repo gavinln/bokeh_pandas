@@ -53,63 +53,11 @@ class python_setup {
                 provider => pip,
                 require => Package['python-pip']
             }
-#            package { ["python-zmq", "python-scipy"]:
-#                ensure => installed,
-#                require => Package['python-pip']
-#            }
-#            package { ['libfreetype6-dev', 'pkg-config']:
-#                ensure => installed
-#            }
-#            package { ['pyparsing']:
-#                ensure => installed,
-#                provider => pip,
-#                require => Package['python-pip']
-#            }
-#            package { ["matplotlib"]:
-#                ensure => installed,
-#                provider => pip,
-#                require => Package['numpy', 'pyparsing', 'libfreetype6-dev']
-#            }
-#            package { 'virtualenv':
-#                ensure => installed,
-#                provider => pip,
-#                require => Package['python-pip']
-#            }
-#            package { 'untangle':
-#                ensure => installed,
-#                provider => pip,
-#                require => Package['virtualenv']
-#            }
-#            package { 'yolk':
-#                ensure => installed,
-#                provider => pip,
-#                require => Package['virtualenv']
-#            }
-#            package { 'pygments':
-#                ensure => installed,
-#                provider => pip,
-#                require => Package['virtualenv']
-#            }
-#            package { 'nose':
-#                ensure => installed,
-#                provider => pip,
-#                require => Package['virtualenv']
-#            }
-#            package { 'tornado':
-#                ensure => installed,
-#                provider => pip,
-#                require => Package['virtualenv']
-#            }
-#            package { 'pandas':
-#                ensure => installed,
-#                provider => pip,
-#                require => Package['numpy']
-#            }
-#            package { 'seaborn':
-#                ensure => installed,
-#                provider => pip,
-#                require => Package['matplotlib']
-#            }
+            package { 'vincent':
+                ensure => installed,
+                provider => pip,
+                require => Package['python-pip']
+            }
         }
     }
 }
